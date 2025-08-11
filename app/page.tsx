@@ -11,6 +11,8 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import LoadingSpinner from '@/components/LoadingSpinner'
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -39,6 +41,8 @@ export default function Home() {
       <Services />
       <Contact />
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </main>
   )
 } 
