@@ -28,7 +28,7 @@ export default function Services() {
         'Database Design',
         'Performance Optimization'
       ],
-      price: 'From $2,000',
+      price: 'From KES 150,000',
       duration: '2-8 weeks'
     },
     {
@@ -43,7 +43,7 @@ export default function Services() {
         'Cross-browser Compatibility',
         'Performance Optimization'
       ],
-      price: 'From $1,500',
+      price: 'From KES 100,000',
       duration: '1-4 weeks'
     },
     {
@@ -58,7 +58,7 @@ export default function Services() {
         'Third-party Integrations',
         'Server Deployment'
       ],
-      price: 'From $1,800',
+      price: 'From KES 120,000',
       duration: '2-6 weeks'
     },
     {
@@ -73,7 +73,7 @@ export default function Services() {
         'Cross-platform Compatibility',
         'App-like Experience'
       ],
-      price: 'From $1,200',
+      price: 'From KES 80,000',
       duration: '1-3 weeks'
     },
     {
@@ -88,7 +88,7 @@ export default function Services() {
         'Corporate Training',
         'Curriculum Development'
       ],
-      price: 'From $50/hour',
+      price: 'From KES 3,000/hour',
       duration: 'Flexible'
     },
     {
@@ -103,10 +103,17 @@ export default function Services() {
         'Security Assessment',
         'Development Strategy'
       ],
-      price: 'From $100/hour',
+      price: 'From KES 5,000/hour',
       duration: 'As needed'
     }
   ]
+
+  const scrollToContact = (subject?: string) => {
+    const element = document.querySelector('#contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <section id="services" className="section-padding bg-white dark:bg-gray-900">
@@ -175,6 +182,7 @@ export default function Services() {
                   <div className="text-sm text-gray-500 dark:text-gray-400">{service.duration}</div>
                 </div>
                 <motion.button
+                  onClick={() => scrollToContact(service.title)}
                   className="btn-primary text-sm py-2 px-4"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -262,6 +270,7 @@ export default function Services() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
+              onClick={() => scrollToContact('Start a Project')}
               className="btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -269,6 +278,7 @@ export default function Services() {
               Start a Project
             </motion.button>
             <motion.button
+              onClick={() => scrollToContact('Computer Training')}
               className="btn-secondary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

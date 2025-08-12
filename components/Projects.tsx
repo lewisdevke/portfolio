@@ -12,8 +12,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['Python', 'Django', 'React', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
       category: 'Full-Stack',
-      liveUrl: 'https://ecommerce-demo.com',
-      githubUrl: 'https://github.com/lewismwaura/ecommerce',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/ecommerce',
       features: ['User Authentication', 'Product Management', 'Payment Integration', 'Admin Dashboard', 'Responsive Design']
     },
     {
@@ -22,8 +22,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['Node.js', 'Express.js', 'React', 'MongoDB', 'Socket.io', 'JWT'],
       category: 'Full-Stack',
-      liveUrl: 'https://task-app-demo.com',
-      githubUrl: 'https://github.com/lewismwaura/task-app',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/task-app',
       features: ['Real-time Updates', 'Team Collaboration', 'Progress Tracking', 'User Management', 'Mobile Responsive']
     },
     {
@@ -32,8 +32,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'SEO'],
       category: 'Frontend',
-      liveUrl: 'https://lewismwaura.com',
-      githubUrl: 'https://github.com/lewismwaura/portfolio',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/portfolio',
       features: ['Responsive Design', 'Dark Mode', 'Smooth Animations', 'SEO Optimized', 'Fast Loading']
     },
     {
@@ -42,8 +42,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['Python', 'Django', 'Bootstrap', 'PostgreSQL', 'Celery', 'Redis'],
       category: 'Backend',
-      liveUrl: 'https://lms-demo.com',
-      githubUrl: 'https://github.com/lewismwaura/lms',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/lms',
       features: ['Course Management', 'Student Tracking', 'Interactive Lessons', 'Progress Reports', 'Admin Panel']
     },
     {
@@ -52,8 +52,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['React', 'JavaScript', 'Weather API', 'Geolocation', 'Chart.js'],
       category: 'Frontend',
-      liveUrl: 'https://weather-demo.com',
-      githubUrl: 'https://github.com/lewismwaura/weather-app',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/weather-app',
       features: ['Current Weather', 'Forecasts', 'Location Services', 'Interactive Charts', 'Responsive Design']
     },
     {
@@ -62,8 +62,8 @@ export default function Projects() {
       image: '/api/placeholder/600/400',
       technologies: ['Python', 'Django', 'Bootstrap', 'SQLite', 'Chart.js', 'Pandas'],
       category: 'Full-Stack',
-      liveUrl: 'https://inventory-demo.com',
-      githubUrl: 'https://github.com/lewismwaura/inventory',
+      liveUrl: 'https://lewismwaura.vercel.app',
+      githubUrl: 'https://github.com/lewisdevke/inventory',
       features: ['Stock Tracking', 'Supplier Management', 'Reporting Tools', 'Barcode Scanning', 'Data Export']
     }
   ]
@@ -255,6 +255,12 @@ export default function Projects() {
             Have a project in mind? Let's bring your ideas to life!
           </p>
           <motion.button
+          onClick={() => {
+              const element = document.querySelector('#contact')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

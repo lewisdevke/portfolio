@@ -50,8 +50,8 @@ export default function Experience() {
     {
       period: '2019 - 2020',
       title: 'Computer Programming Trainer',
-      company: 'Tech Academy Kenya',
-      location: 'Nairobi, Kenya',
+      company: 'Pearl Training Institute',
+      location: 'Ndenderu - Kiambu, Kenya',
       description: 'Began teaching computer programming basics to beginners, developing curriculum and mentoring students.',
       achievements: [
         'Trained 50+ students',
@@ -65,18 +65,26 @@ export default function Experience() {
 
   const education = [
     {
-      period: '2019 - 2023',
-      title: 'Bachelor of Computer Science',
-      institution: 'University of Nairobi',
-      location: 'Nairobi, Kenya',
-      description: 'Studied computer science with focus on software engineering, algorithms, and web development.',
-      achievements: ['First Class Honours', 'Dean\'s List', 'Best Final Year Project']
+      period: '2022 - 2025',
+      title: 'Diploma in Information Communication Technology',
+      institution: 'Kiambu National Polytechnic',
+      location: 'Kiambu, Kenya',
+      description: 'Studied Information Communication Technology (ICT) with focus on software engineering, algorithms, and web development.',
+      achievements: ['2nd best in world skills competition', '1st best in regional and national skills competition', 'Dean\'s List', 'Best Final Year Project']
     },
     {
-      period: '2018 - 2019',
+      period: '2020 - 2021',
+      title: 'Certificate in Computer Programming and Web Development',
+      institution: 'Mt Kenya University',
+      location: 'Thika, Kenya',
+      description: 'Studied Computer Programming and Web Development with focus on software engineering, algorithms, and web development.',
+      achievements: ['Distinction', 'Dean\'s List', 'Best Final Year Project']
+    },
+    {
+      period: '2019 - 2020',
       title: 'Computer Programming Certification',
-      institution: 'Moringa School',
-      location: 'Nairobi, Kenya',
+      institution: 'Online Courses',
+      location: 'Online', 
       description: 'Intensive programming bootcamp covering web development fundamentals and modern frameworks.',
       achievements: ['Full-Stack Development', 'Agile Methodologies', 'Project Management']
     }

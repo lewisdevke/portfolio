@@ -207,6 +207,12 @@ export default function Skills() {
             Looking for a developer with these skills?
           </p>
           <motion.button
+            onClick={() => {
+              const element = document.querySelector('#contact')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

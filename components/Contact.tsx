@@ -1,16 +1,20 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
+import { useEffect, useState } from 'react'
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
   CheckCircle,
   MessageSquare,
-  Globe
+  Globe,
+  Linkedin,
+  Github,
+  X
+
 } from 'lucide-react'
 
 export default function Contact() {
@@ -22,6 +26,19 @@ export default function Contact() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [errorMsg, setErrorMsg] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Optional: prefill subject if provided via URL hash e.g., #subject=Web%20Development
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash
+      const match = hash.match(/subject=([^&]+)/)
+      if (match) {
+        const subject = decodeURIComponent(match[1])
+        setFormData((prev) => ({ ...prev, subject }))
+      }
+    }
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -33,33 +50,43 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
+    setErrorMsg(null)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setIsSubmitted(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+      setTimeout(() => setIsSubmitted(false), 4000)
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Something went wrong. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'lewis@lewismwaura.com',
-      link: 'mailto:lewis@lewismwaura.com',
+      value: 'lewisdevke@gmail.com',
+      link: 'mailto:lewisdevke@gmail.com',
       description: 'Send me an email anytime'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+254 700 000 000',
-      link: 'tel:+254700000000',
+      value: '+254 110 046 523',
+      link: 'tel:+254110046523',
       description: 'Call me during business hours'
     },
     {
@@ -72,7 +99,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: 'Business Hours',
-      value: 'Mon - Fri: 9AM - 6PM',
+      value: 'Mon - Fri: 6AM - 6PM',
       link: '#',
       description: 'EAT (East Africa Time)'
     }
@@ -81,18 +108,18 @@ export default function Contact() {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/lewismwaura',
-      icon: Globe
+      url: 'https://www.linkedin.com/in/lewis-dev-ke-45221937a',
+      icon: Linkedin
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/lewismwaura',
-      icon: Globe
+      url: 'https://github.com/lewisdevke',
+      icon: Github
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/lewismwaura',
-      icon: Globe
+      url: 'https://x.com/@dev_lewis_ke',
+      icon: X
     }
   ]
 
@@ -110,7 +137,7 @@ export default function Contact() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Ready to start your project or need training? Let's discuss how I can help you 
+            Ready to start your project or need training? Let's discuss how I can help you
             achieve your technology goals.
           </p>
         </motion.div>
@@ -144,6 +171,11 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {errorMsg && (
+                  <div className="p-3 rounded-lg bg-red-50 text-red-700 border border-red-200 text-sm">
+                    {errorMsg}
+                  </div>
+                )}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -250,7 +282,7 @@ export default function Contact() {
                 Contact Information
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
-                I'm always available to discuss new opportunities, interesting projects, 
+                I'm always available to discuss new opportunities, interesting projects,
                 or just to have a chat about technology.
               </p>
             </div>
@@ -324,7 +356,7 @@ export default function Contact() {
                 </h4>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                I typically respond to all inquiries within 24 hours during business days. 
+                I typically respond to all inquiries within 24 hours during business days.
                 For urgent matters, feel free to call me directly.
               </p>
             </motion.div>
@@ -343,6 +375,12 @@ export default function Contact() {
             Let's turn your ideas into reality!
           </p>
           <motion.button
+            onClick={() => {
+              const element = document.querySelector('#contact')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

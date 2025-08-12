@@ -29,7 +29,7 @@ export default function Footer() {
               </p>
               <div className="flex space-x-4">
                 <motion.a
-                  href="https://github.com/lewismwaura"
+                  href="https://github.com/lewisdevke"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300"
@@ -41,7 +41,7 @@ export default function Footer() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/lewismwaura"
+                  href="https://www.linkedin.com/in/lewis-dev-ke-45221937a"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300"
@@ -53,7 +53,7 @@ export default function Footer() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://twitter.com/lewismwaura"
+                  href="https://x.com/@dev_lewis_ke"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-colors duration-300"
@@ -128,8 +128,8 @@ export default function Footer() {
               <Mail className="w-5 h-5 text-primary-400 mr-3" />
               <div>
                 <p className="text-sm text-gray-400">Email</p>
-                <a href="mailto:lewis@lewismwaura.com" className="text-gray-300 hover:text-primary-400 transition-colors duration-200">
-                  lewis@lewismwaura.com
+                <a href="mailto:lewisdevke@gmail.com" className="text-gray-300 hover:text-primary-400 transition-colors duration-200">
+                  lewisdevke@gmail.com
                 </a>
               </div>
             </div>
@@ -137,8 +137,8 @@ export default function Footer() {
               <Phone className="w-5 h-5 text-primary-400 mr-3" />
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
-                <a href="tel:+254700000000" className="text-gray-300 hover:text-primary-400 transition-colors duration-200">
-                  +254 700 000 000
+                <a href="tel:+254110046523" className="text-gray-300 hover:text-primary-400 transition-colors duration-200">
+                  +254 110 046 523
                 </a>
               </div>
             </div>

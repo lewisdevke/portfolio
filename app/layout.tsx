@@ -13,17 +13,17 @@ export const metadata: Metadata = {
   creator: 'Lewis Mwaura Kinyanjui',
   publisher: 'Lewis Mwaura Kinyanjui',
   robots: 'index, follow',
-  metadataBase: new URL('https://lewismwaura.com'),
+  metadataBase: new URL('https://lewismwaura.vercel.app/'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://lewismwaura.com',
+    url: 'https://lewismwaura.vercel.app/',
     title: 'Lewis Mwaura Kinyanjui - Software Developer & Computer Trainer',
     description: 'Professional software developer specializing in Python, Django, React, MERN stack, and computer training.',
     siteName: 'Lewis Mwaura Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Lewis Mwaura Kinyanjui - Software Developer',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lewis Mwaura Kinyanjui - Software Developer & Computer Trainer',
     description: 'Professional software developer specializing in Python, Django, React, MERN stack, and computer training.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   manifest: '/site.webmanifest',
   icons: {
@@ -59,6 +59,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <Script

@@ -51,8 +51,8 @@ export default function About() {
             About <span className="text-gradient">Me</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A passionate software developer and computer trainer with a mission to create innovative solutions 
-            and empower others through technology education.
+            A passionate software developer and computer trainer from Kenya, dedicated to creating innovative solutions 
+            and empowering others through technology education.
           </p>
         </motion.div>
 
@@ -84,7 +84,8 @@ export default function About() {
               </p>
               <p>
                 I believe in continuous learning and staying updated with industry trends. Every project is an 
-                opportunity to grow, and every challenge is a chance to innovate.
+                opportunity to grow, and every challenge is a chance to innovate. My goal is to help businesses 
+                and individuals achieve their technology goals while contributing to the growth of the tech ecosystem in Kenya and beyond.
               </p>
             </div>
           </motion.div>
@@ -163,6 +164,12 @@ export default function About() {
             Ready to work together on your next project?
           </p>
           <motion.button
+            onClick={() => {
+              const element = document.querySelector('#contact')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

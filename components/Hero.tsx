@@ -11,6 +11,22 @@ export default function Hero() {
     }
   }
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const downloadCV = () => {
+    // Add your CV download link here
+    const cvUrl = '/lewis-mwaura-cv.pdf' // Update this with your actual CV file
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = 'Lewis-Mwaura-CV.pdf'
+    link.click()
+  }
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Background Elements */}
@@ -48,6 +64,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
           <motion.button
+            onClick={scrollToContact}
             className="btn-primary flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -56,6 +73,7 @@ export default function Hero() {
             Get In Touch
           </motion.button>
           <motion.button
+            onClick={downloadCV}
             className="btn-secondary flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -73,32 +91,35 @@ export default function Hero() {
           className="flex justify-center space-x-6 mb-12"
         >
           <motion.a
-            href="https://github.com/lewismwaura"
+            href="https://github.com/lewisdevke"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             whileHover={{ scale: 1.2, y: -2 }}
             whileTap={{ scale: 0.9 }}
+            title="GitHub Profile"
           >
             <Github size={28} />
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/lewismwaura"
+            href="https://www.linkedin.com/in/lewis-dev-ke-45221937a"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             whileHover={{ scale: 1.2, y: -2 }}
             whileTap={{ scale: 0.9 }}
+            title="LinkedIn Profile"
           >
             <Linkedin size={28} />
           </motion.a>
           <motion.a
-            href="https://twitter.com/lewismwaura"
+            href="https://x.com/@dev_lewis_ke"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             whileHover={{ scale: 1.2, y: -2 }}
             whileTap={{ scale: 0.9 }}
+            title="Twitter Profile"
           >
             <Twitter size={28} />
           </motion.a>
