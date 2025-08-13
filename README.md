@@ -171,8 +171,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Lewis Mwaura Kinyanjui**
-- Email: lewis@lewismwaura.com
-- Phone: +254 700 000 000
+- Email: lewisdevke@gmail.com
+- Phone: +254 110 046 523
 - Location: Nairobi, Kenya
 
 ## 🙏 Acknowledgments
